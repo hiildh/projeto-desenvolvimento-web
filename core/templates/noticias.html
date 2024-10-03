@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notícias de Celulares</title>
+</head>
+<body>
+    <h1>Notícias sobre Celulares</h1>
+    <ul>
+        {% for noticia in noticias %}
+            <li><strong>{{ noticia.titulo }}</strong> - {{ noticia.data_publicacao }}</li>
+            <p>{{ noticia.conteudo }}</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

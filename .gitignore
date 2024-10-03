@@ -1,0 +1,25 @@
+# Python/Django files
+*.pyc
+__pycache__/
+
+# Django stuff:
+*.log
+*.pot
+*.py[cod]
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# Virtual environments:
+venv/
+.env
+
+# VS Code settings
+.vscode/
+
+# macOS
+.DS_Store
+
+# JetBrains IDEs
+.idea/

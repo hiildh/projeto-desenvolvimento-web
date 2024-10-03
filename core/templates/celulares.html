@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Celulares à Venda</title>
+</head>
+<body>
+    <h1>Lista de Celulares à Venda</h1>
+    <ul>
+        {% for celular in celulares %}
+            <li><strong>{{ celular.nome }}</strong> - <a href="{{ celular.link_venda }}">Comprar</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
