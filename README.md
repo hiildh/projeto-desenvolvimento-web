@@ -63,3 +63,8 @@ Agora, você pode rodar o servidor localmente:
 python manage.py migrate
 ```
 O servidor estará disponível no endereço ``http://127.0.0.1:8000/``.
+
+> **Observação:** Se realizar alteração no `models.py`, tem que rodar o migrations direcionando a pasta core assim:
+> ```bash
+> python manage.py makemigrations core
+> ```

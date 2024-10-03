@@ -8,6 +8,7 @@ class Noticia(models.Model):
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
     data_publicacao = models.DateTimeField(auto_now_add=True)
     link = models.URLField(max_length=200)
+    imagem_link = models.URLField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.titulo
