@@ -10,3 +10,6 @@ def listar_noticias(request):
 def listar_celulares(request):
     celulares = Celular.objects.all()
     return render(request, 'celulares.html', {'celulares': celulares})
+
+def cadastro_user(request):
+    return render(request, 'cadastro_user.html')
