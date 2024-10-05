@@ -64,7 +64,21 @@ python manage.py migrate
 ```
 O servidor estará disponível no endereço ``http://127.0.0.1:8000/``.
 
-> **Observação:** Se realizar alteração no `models.py`, tem que rodar o migrations direcionando a pasta core assim:
-> ```bash
-> python manage.py makemigrations core
-> ```
+> ### Observações:
+> 
+> 1. **Alterações no `models.py`**: Se realizar alteração no `models.py`, tem que rodar o migrations direcionando a pasta core assim:
+>    ```bash
+>    python manage.py makemigrations core
+>    ```
+> 
+> 2. **Rota para adicionar notícias**: Para adicionar notícias, utilize a rota `/adicionar-noticia` no seu navegador após iniciar o servidor e inserir as informações da notícia manualmente pelo editor de código no dicionário abaixo.
+>   ```python
+>       noticia = Noticia.objects.create(
+>            titulo="título da notícia",
+>            conteudo="pequeno resumo",
+>            autor="autor",  # O nome do site ou fonte da notícia
+>            link="link da noticia",
+>            imagem_link="link da imagem da noticia"
+>        )
+>   ```
+

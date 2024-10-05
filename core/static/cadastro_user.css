@@ -1,0 +1,138 @@
+/* Estilo Global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #bcccd821;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background-color: #717c866e;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    padding-left: 10px;
+    color: black;
+}
+
+.secondName {
+    color: #8c54fc;
+}
+
+/* Container principal */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Títulos */
+.container h2 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Estilo dos inputs */
+.container input[type="text"],
+.container input[type="email"],
+.container input[type="password"] {
+    width: -webkit-fill-available;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.container input:focus {
+    outline: none;
+    border-color: #8c54fc;
+}
+
+.container a {
+    text-align: center;
+    color: #8c54fc;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+/* Botão de registrar */
+.container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #8c54fc;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.container input[type="submit"]:hover {
+    background-color: #9566f5;
+}
+
+/* Estilo do footer */
+footer {
+    background-color: #8c54fc;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+footer h1 {
+    margin: 0;
+    align-content: center;
+    padding-left: 10px;
+}
+
+footer p {
+    margin: 0;
+    padding-right: 10px;
+    align-content: center;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    /* Navbar hamburger menu para mobile */
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+}

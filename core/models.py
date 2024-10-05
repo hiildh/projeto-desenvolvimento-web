@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Noticia(models.Model):
     titulo = models.CharField(max_length=200)
     conteudo = models.TextField()
-    autor = models.ForeignKey(User, on_delete=models.CASCADE)
+    autor = models.CharField(max_length=200)
     data_publicacao = models.DateTimeField(auto_now_add=True)
     link = models.URLField(max_length=200)
     imagem_link = models.URLField(max_length=200, null=True, blank=True)

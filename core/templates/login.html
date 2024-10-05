@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/cadastro_user.css">
+</head>
+<body>
+    <header>
+        <h1>WebCell</h1>
+    </header>
+    <div class="container">
+        <h2>Login:</h2>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <label for="username">Nome de Usuário</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Login">
+        </form>
+        <a href="/cadastro_user/">Não tem uma conta? Registre-se</a>
+    </div>
+    <footer>
+        <h1>WebCell</h1>
+    </footer>
+</body>
+</html>
