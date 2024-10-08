@@ -1,0 +1,11 @@
+runtime: python311  # Ou python310, dependendo da versão
+entrypoint: gunicorn -b :$PORT celulares.wsgi
+
+handlers:
+- url: /static
+  static_dir: static/
+
+env_variables:
+  DJANGO_SETTINGS_MODULE: "celulares.settings"
+  SECRET_KEY: "django-insecure-jm*%ckxeg3n82p*6ft1%dsl)@4s6**e$24z_apu+ab8hsv_v9f"
+  DEBUG: "False"

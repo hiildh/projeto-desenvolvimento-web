@@ -27,7 +27,11 @@ SECRET_KEY = 'django-insecure-jm*%ckxeg3n82p*6ft1%dsl)@4s6**e$24z_apu+ab8hsv_v9f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'trim-approach-437400-m3.rj.r.appspot.com',
+    'https://trim-approach-437400-m3.rj.r.appspot.com',
+]
 
 
 # Application definition
@@ -86,7 +90,7 @@ DATABASES = {
         'PORT': '26257',               # Porta usada pelo CockroachDB
         'OPTIONS': {
             'sslmode': 'verify-full',
-            'sslrootcert': os.path.join(os.getenv('APPDATA'), 'postgresql', 'root.crt'), # Caminho do certificado
+            'sslrootcert': os.path.join(BASE_DIR, 'celulares', 'certs', 'root.crt'), # Caminho do certificado
         }
     }
 }
@@ -126,7 +130,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
