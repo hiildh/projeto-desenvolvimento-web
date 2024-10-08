@@ -16,8 +16,20 @@ class Noticia(models.Model):
 # Model para armazenar celulares com links para compra
 class Celular(models.Model):
     nome = models.CharField(max_length=100)
+    descricao = models.TextField()
     modelo = models.CharField(max_length=100)
     fabricante = models.CharField(max_length=100)
+    processador = models.CharField(max_length=100)
+    velocidade_processador = models.FloatField()
+    memoria_ram = models.IntegerField()
+    armazenamento = models.IntegerField()
+    tamanho_tela = models.FloatField()
+    resolucao_tela = models.CharField(max_length=100)
+    velocidade_clock = models.FloatField()
+    bateria = models.IntegerField()
+    modelo_bateria = models.CharField(max_length=100)
+    camera = models.FloatField()
+    tipo_conexao = models.CharField(max_length=100)
     link_venda = models.URLField(max_length=200)
 
     def __str__(self):
@@ -26,10 +38,10 @@ class Celular(models.Model):
 # Model para comentários nas notícias ou celulares
 class Comentario(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
-    noticia = models.ForeignKey(Noticia, null=True, blank=True, on_delete=models.CASCADE)
     celular = models.ForeignKey(Celular, null=True, blank=True, on_delete=models.CASCADE)
     conteudo = models.TextField()
     data = models.DateTimeField(auto_now_add=True)
+    avaliacao = models.IntegerField(default=0)
 
     def __str__(self):
         return f'Comentário de {self.usuario} em {self.noticia or self.celular}'
