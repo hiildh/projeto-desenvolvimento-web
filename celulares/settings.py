@@ -31,6 +31,9 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'trim-approach-437400-m3.rj.r.appspot.com',
     'https://trim-approach-437400-m3.rj.r.appspot.com',
+    'https://vercel.live/link/projeto-desenvolvimento-web-blue.vercel.app?via=deployment-domains-list&p=1',
+    'https://projeto-desenvolvimen-git-cd6551-hildinha698-gmailcoms-projects.vercel.app',
+    
 ]
 
 
