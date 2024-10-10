@@ -30,7 +30,9 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'https://projeto-desenvolvimento-web-main.fly.dev',
     'projeto-desenvolvimento-web-main.fly.dev',
-    ]
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition

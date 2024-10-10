@@ -23,6 +23,29 @@ def adicionar_noticia(request):
     # Retorna uma resposta simples para confirmar que a notícia foi criada
     return HttpResponse(f"Notícia '{noticia.titulo}' adicionada com sucesso!")
 
+def adicionar_celular(request):
+    # Cria um novo celular com os dados que você inserir manualmente
+    celular = Celular.objects.create(
+        nome="Samsung Galaxy S24 FE",
+        descricao="O Galaxy S24 FE é o novo celular intermediário premium da Samsung, parte da linha Fan Edition. Muito parecido com o Galaxy S24+ em visual e desempenho, o smartphone chega sem muitas novidades ou diferenciais, em posição confusa em relação aos demais modelos de 2024. Confira, no review a seguir, os prós e contras do Galaxy S24 FE e saiba para quem ele é bom.",
+        modelo="S24 FE",
+        fabricante="Samsung",
+        processador="Exynos 2200",
+        velocidade_processador=2.9,
+        memoria_ram=8,
+        armazenamento=128,
+        tamanho_tela=6.7,
+        resolucao_tela="FHD+",
+        velocidade_clock=120,
+        bateria=4500,
+        modelo_bateria="Li-Po",
+        camera=108,
+        tipo_conexao="4G",
+        link_venda="https://www.samsung.com.br/smartphones/galaxy-s24-fe/"
+    )
+    return HttpResponse(f"Celular '{celular.nome}' adicionado com sucesso!")
+
+
 # View para listar celulares
 def listar_celulares(request):
     celulares = Celular.objects.all()
