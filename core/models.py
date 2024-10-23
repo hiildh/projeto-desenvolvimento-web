@@ -15,22 +15,22 @@ class Noticia(models.Model):
 
 # Model para armazenar celulares com links para compra
 class Celular(models.Model):
-    nome = models.CharField(max_length=100)
-    descricao = models.TextField()
-    modelo = models.CharField(max_length=100)
-    fabricante = models.CharField(max_length=100)
-    processador = models.CharField(max_length=100)
-    velocidade_processador = models.FloatField()
-    memoria_ram = models.IntegerField()
-    armazenamento = models.IntegerField()
-    tamanho_tela = models.FloatField()
-    resolucao_tela = models.CharField(max_length=100)
-    velocidade_clock = models.FloatField()
-    bateria = models.IntegerField()
-    modelo_bateria = models.CharField(max_length=100)
-    camera = models.FloatField()
-    tipo_conexao = models.CharField(max_length=100)
-    link_venda = models.URLField(max_length=200)
+    nome = models.CharField(max_length=100, default='')
+    descricao = models.TextField(default='')
+    modelo = models.CharField(max_length=100, default='')
+    fabricante = models.CharField(max_length=100, default='')
+    processador = models.CharField(max_length=100, default='')
+    velocidade_processador = models.FloatField(default=0.0)
+    memoria_ram = models.IntegerField(default=0)
+    armazenamento = models.IntegerField(default=0)
+    tamanho_tela = models.FloatField(default=0.0)
+    resolucao_tela = models.CharField(max_length=100, default='')
+    velocidade_clock = models.FloatField(default=0.0)
+    bateria = models.IntegerField(default=0)
+    modelo_bateria = models.CharField(max_length=100, default='')
+    camera = models.FloatField(default=0.0)
+    tipo_conexao = models.CharField(max_length=100, default='')
+    link_venda = models.URLField(max_length=200, default='')
 
     def __str__(self):
         return f'{self.nome} - {self.modelo}'

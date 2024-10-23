@@ -28,9 +28,10 @@ SECRET_KEY = 'django-insecure-jm*%ckxeg3n82p*6ft1%dsl)@4s6**e$24z_apu+ab8hsv_v9f
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'https://projeto-desenvolvimento-web-main.fly.dev',
+    'projeto-desenvolvimento-web-main.fly.dev',
+    'localhost',
     '127.0.0.1',
-    'trim-approach-437400-m3.rj.r.appspot.com',
-    'https://trim-approach-437400-m3.rj.r.appspot.com',
 ]
 
 
@@ -75,6 +76,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'celulares.wsgi.application'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://projeto-desenvolvimento-web-main.fly.dev',  # URL do seu projeto no Fly.io
+]
 
 
 # Database
