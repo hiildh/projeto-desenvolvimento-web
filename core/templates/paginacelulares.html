@@ -9,13 +9,14 @@
 <body>
     <div>
     <div class="container"></div>
-    <h1>nome do celular</h1>
-    <img scr="" alt="nome do celular" class="imagem-do-produto">
-    <div class="modelo">iphone 12</div>
+    <h1>{{celular.nome}}</h1>
+    <img src="{{ celular.imagem_link }}" alt="{{celular.nome}}" class="imagem-do-produto">
+    <div class="modelo">{{celular.modelo}}</div>
     <div class="informações basicas">memoria ram, memoria interna, processador</p>
-    <div class="descrição"> blabslablablabal</p>
-    <div class="preço">R$1000</div>
-    <a href="$" class="button">adiquira o produto</a>
+    <div class="descrição"> {{celular.descricao}}</p>
+        <!-- não coloquei preço no banco de dados -->
+    <div class="preço">R$1000</div> 
+    <a href="{{celular.link_venda}}" class="button">adiquira o produto</a>
   </div>
 
     <div>

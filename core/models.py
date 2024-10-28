@@ -31,6 +31,7 @@ class Celular(models.Model):
     camera = models.FloatField(default=0.0)
     tipo_conexao = models.CharField(max_length=100, default='')
     link_venda = models.URLField(max_length=200, default='')
+    imagem_link = models.URLField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return f'{self.nome} - {self.modelo}'
