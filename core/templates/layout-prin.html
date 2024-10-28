@@ -26,7 +26,7 @@
                 <div class="layout">
                     {% for noticia in noticias %}
                         <div class="carrssoel-item">
-                            <a href="" target="_blank"><!--target -> serve para impor alguma acao quando o usuario clicar no link, blank é para clicar e abrir outra página.-->
+                            <a href="{{noticia.link}}" target="_blank"><!--target -> serve para impor alguma acao quando o usuario clicar no link, blank é para clicar e abrir outra página.-->
                                 <img src="{{ noticia.imagem_link }}" alt="{{ noticia.titulo }}">
                                 <p>{{noticia.titulo}}</p>
                             </a> 
