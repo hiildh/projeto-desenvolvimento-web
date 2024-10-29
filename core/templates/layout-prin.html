@@ -3,107 +3,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebCell</title>
-    <link rel="stylesheet" href="./static/layout-prin.css">
+    <link rel="stylesheet" href="../static/layout-prin.css">
 </head>
 <body>
-    <header>
-        <span class="logo">WebCell</span>
-        <ul>
-            <li><a href="">Home</a></li>
-            <li><a href=""></a>Smartphones</li>
-            <li><a href=""></a>Account</li>
-        </ul>
-        <ul>
-            <li><a href="">Login</a></li>
-            <li><a href="">Register</a></li>
-        </ul>
+    <header> <!--Aqui demos inicio a nossa página, a tag header símboliza o cabeçalho da página-->
+        <nav> <!--Tag nav utilizada para indicar e menu principal e iterativo da página-->
+            <span class="logo">WebCell</span>  <!--Parte da logo + botão interativo-->
+            <ul class="menu"> <!--Lista com elemento utilizados no header-->
+                <li><a href="" >Home</a></li>
+                <li><a href="">Smartphones</a></li>
+                <li><a href="">Account</a></li>
+            </ul>
+            <ul>
+                <div class="pg-login"> <!--Parte de interação com o úsuario para login e registrar-->
+                    <div><li><a href="login.html" class="botao-login">Login</a></div>
+                    <div><li><a href="register.html" class="botao-register">Register</a></li></div>
+                </div>
+            </ul>
+        </nav>
     </header>
-    <main>
+    <main> <!--Dá inicio a parte principal do nosso site-->
         <section class="hero">
-            <span>Notícias</span>
+            <span class="subtit">Notícias</span> <!--A parte do Hero é divida em 3 parte principais cada uma com seu assunto-->
             <h2>Fique por dentro das principais notícias do mundo mobile.</h2>
-            <div class="carrossel">
-                <div class="layout">
-                    <div class="carrssoel-item">
-                        <a href="https://www.techtudo.com.br/listas/2024/10/celular-samsung-galaxy-512-gb-6-opcoes-para-nao-ficar-sem-memoria-edqualcomprar.ghtml" target="_blank"><!--target -> serve para impor alguma acao quando o usuario clicar no link, blank é para clicar e abrir outra página.-->
-                            <img src="" alt="">
-                            <p>Noticia 1</p>
-                        </a> 
+                <div class="slider"> <!--Temos um carrossel de notciais que ao clicar direciona para a página principal da nóticia-->
+                        <div class="slider-itn">
+                            <input type="radio" name="radio-btn" id="radio1">
+                            <input type="radio" name="radio-btn" id="radio2">
+                            <input type="radio" name="radio-btn" id="radio3">
+                            <input type="radio" name="radio-btn" id="radio4">
+                            <input type="radio" name="radio-btn" id="radio5">
+                        <!--Slides Images-->
+                            <div class="slide first">
+                                <a href="https://www.techtudo.com.br/noticias/2024/10/poco-x6-tem-nfc-veja-se-o-celular-faz-pagamentos-por-aproximacao-edmobile.ghtml" target="_blank"><!--target -> serve para impor alguma acao quando o usuario clicar no link, blank é para clicar e abrir outra página.-->
+                                    <img src="/imgs-prin/image 1.png" alt="">
+                                    <p>Poco X6 tem NFC? Veja se o celular
+                                        faz pagamentos por aproximação</p>
+                                </a> 
+                            </div>
+
+                            <div class="slide">
+                                <a href="https://www.techtudo.com.br/guia/2024/10/galaxy-s24-fe-e-bom-veja-ficha-tecnica-preco-e-lancamento-edmobile.ghtml" target="_blank">
+                                    <img src="/imgs-prin/image 2.png" alt="">
+                                    <p>Galaxy S24 FE é bom? Veja ficha técnica, preço e lançamento.</p>
+                                </a> 
+                            </div>  
+                            <div class="slide">
+                                <a href="https://www.techtudo.com.br/noticias/2024/10/moto-g54-tem-nfc-veja-se-o-celular-faz-pagamentos-por-aproximacao-edmobile.ghtml" target="_blank">
+                                    <img src="/imgs-prin/image 4.png" alt="">
+                                    <p>Moto G54 tem NFC? Veja se o celular faz pagamentos por aproximação.</p>
+                                </a> 
+                            </div>   
+                            
+                            <div class="slide">
+                                <a href="" target="_blank">
+                                    <img src="" alt="noticia4">
+                                    <p>Noticia 4</p>
+                                </a> 
+                            </div> 
+
+                            <div class="slide">
+                                <a href="" target="_blank">
+                                    <img src="" alt="noticia5">
+                                    <p>Noticia 5</p>
+                                </a> 
+                            </div> 
+                            <!--End Slides Images-->
+
+                            <!--Navegatin Auto-->
+                            <div class="navegation-auto">
+                                <div class="auto-btn1"></div>
+                                <div class="auto-btn2"></div>
+                                <div class="auto-btn3"></div>
+                                <div class="auto-btn4"></div>
+                                <div class="auto-btn5"></div>
+                            </div>
+                        </div>
+                    <div class="manual-navegation">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                        <label for="radio5" class="manual-btn"></label>
                     </div>
-                    <div class="carrssoel-item">
-                        <a href="" target="_blank">
-                            <img src="" alt="">
-                            <p>Noticia 2</p>
-                        </a> 
-                    </div>  
-                    <div class="carrssoel-item">
-                        <a href="" target="_blank">
-                            <p>Noticia 3</p>
-                        </a> 
-                    </div>   
-                    <div class="carrssoel-item">
-                        <a href="" target="_blank">
-                            <img src="" alt="">
-                            <p>Noticia 4</p>
-                        </a> 
-                    </div> 
-                    <div class="carrssoel-item">
-                        <a href="" target="_blank">
-                            <img src="" alt="">
-                            <p>Noticia 5</p>
-                        </a> 
-                    </div> 
                 </div>
-            </div>
-            <button class="left-arrow" onclick="moveSlide(-1)">&#10094; <img src=""></button>
-            <button class="right-arrow" onclick="moveSlide(1)">&#10095; <img src=""></button>
-            <section class="search">
-                <div>
-                    <input type="text" id="searchInput" placeholder="Digite sua busca...">
-                    <button onclick="searchResults"></button>
-                </div>
+                <script>
+                    let count = 1;
+                    document.getElementById("radio1").checked = true;
+
+                    setInterval( function(){
+                        nextImagem();
+                    }, 5000);
+
+                    function nextImagem(){
+                        count++;
+                        if(count>4){
+                            count=1;
+                        }
+
+                        document.getElementById("radio"+count).checked = true;
+                    }
+                </script>
             </section>
             <section class="smartphones">
-                <span>SmartPhone</span>
-                <div class="smt1">
-                    <p>SmartPhone1</p>
-                    <img src="" alt="">
-                </div>
-                <div class="smt2">
-                    <p>SmartPhone1</p>
-                    <img src="" alt="">
-                    <a href=""></a>
-                </div>
-                <div class="smt3">
-                    <p>SmartPhone1</p>
-                    <a href=""></a>
-                    <img src="" alt="">
-                </div>
-                <div class="smt4">
-                    <p>SmartPhone1</p>
-                    <a href=""></a>
-                    <img src="" alt="">
-                </div>
-                <div class="smt5">
-                    <p>SmartPhone1</p>
-                    <a href=""></a>
-                    <img src="" alt="">
-                </div>
-                <div class="smt6">
-                    <p>SmartPhone1</p>
-                    <a href=""></a>
-                    <img src="" alt="">
-                </div>
-                <div class="smt7">
-                    <p>SmartPhone1</p>
-                    <a href=""></a>
-                    <img src="" alt="">
-                </div>
-                <div class="smt8">
-                    <p>SmartPhone1</p>
-                    <a href=""></a>
-                    <img src="" alt="">
-                </div>
+                <section class="search">
+                    <div>
+                        <input type="text" id="searchInput" placeholder="Digite sua busca...">
+                        <button onclick="searchResults"></button>
+                    </div>
+                <span class="subtit">SmartPhone</span>
+                <div class="smartphone-grid">
+                    <div class="smt">
+                        <p>Iphone 15 Pro Max</p>
+                        <img src="/imgs-prin/iphone15.png" alt="Iphone 15 Pro Max">
+                    </div>
+                    <div class="smt">
+                        <p>Iphone 16</p>
+                        <img src="/imgs-prin/iphone16.png" alt="Iphone 16">
+                        <a href=""></a>
+                    </div>
+                    <div class="smt">
+                        <p>Samsung Galaxy S23 Ultra</p>
+                        <a href=""></a>
+                        <img src="/imgs-prin/s23ultra.png" alt="Samsung S23 Ultra">
+                    </div>
+                    <div class="smt">
+                        <p>Samsung Galaxy S24</p>
+                        <a href=""></a>
+                        <img src="/imgs-prin/s24.png" alt="Samsung S24">
+                    </div>
+                    <div class="smt">
+                        <p>Samsung Galaxy S24 Ultra</p>
+                        <a href=""></a>
+                        <img src="/imgs-prin/s24ultra.png" alt="Samsung S24 Ultra">
+                    </div>
+                    <div class="smt">
+                        <p>Motorola Edge 50 Neo</p>
+                        <a href=""></a>
+                        <img src="/imgs-prin/motorolaedge.png" alt="Motorola Edge 50">
+                    </div>
+                    <div class="smt">
+                        <p>Redmi Note 13 Pro</p>
+                        <a href=""></a>
+                        <img src="/imgs-prin/redmi13.png" alt="Redmi Note 13">
+                    </div>
+                    <div class="smt">
+                        <p>Poco X6 Pro</p>
+                        <a href=""></a>
+                        <img src="/imgs-prin/pocox6.png" alt="Poco X6   	">
+                    </div>
+            </div>
             </section>
         </section>
     </main>
