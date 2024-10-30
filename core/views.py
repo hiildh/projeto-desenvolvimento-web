@@ -45,6 +45,16 @@ def adicionar_celular(request):
     )
     return HttpResponse(f"Celular '{celular.nome}' adicionado com sucesso!")
 
+#view pra gerar a home
+def gerar_home(request):
+    noticias = Noticia.objects.all()
+    celulares = Celular.objects.all()
+    return render(request, 'layout-prin.html', {'noticias': noticias, 'celulares': celulares})
+
+#view pra gerar o detalhamento dos celulares
+def detalhar_celular(request, id):
+    celular = Celular.objects.get(id=id)
+    return render(request, 'paginacelulares.html', {'celular': celular})
 
 # View para listar celulares
 def listar_celulares(request):

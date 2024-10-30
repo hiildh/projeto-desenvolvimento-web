@@ -15,24 +15,13 @@ a{
 ul{
     list-style: none;
 }
-
-nav{
-    max-width: 1120px;
-    margin: auto;
-    padding: 1.5rem 10rem;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
 header{
-    background: #C961FA;
+    background: #C961FA;        
     width: 1920px;
     height: 107px;
 }
 nav{
-    max-width: 1120px;
+    max-width: 80%;
     margin: auto;
     padding: 1rem 1%;
 
@@ -42,27 +31,29 @@ nav{
     align-items: center;
 }
 .logo{
-    color: #FFF;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color:  #000;
+    color: #ffffff;
+    text-shadow: -2px -1px 0 #000, 2px -1px 0 #000, -2px 1px 0 #000, 2px 1px 0 #000;    
     font-family: "Jersey 25";
-    font-size: 64px;
+    font-size: 80px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-right: 40px;
 }
-.menu{
+.menu {
     display: flex;
     gap: 1.5rem;
-    color: #FFF;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #000;
+    line-height: normal;
+    list-style-type: none;
+    
+}
+.menu li a{
+    color: #ffffff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     font-family: "Jersey 25";
     font-size: 43px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
-    list-style-type: none;
 }
 ul{
     list-style: none;
@@ -136,11 +127,6 @@ ul{
     height: 400; 
     border-radius: 4px;
 }
-@media (max-width: 768px){
-    .smt{
-        width: calc(50% - 20px);
-    }
-}
 .smt{
     width: calc(25% - 20 px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -149,29 +135,58 @@ ul{
     background-color: aliceblue;
     border: 8px;
 }
-span{
-    text-align: left;
+
+.searchInput{
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
 }
+
+.search-container{
+    display: flex;
+    align-items: center;
+    max-width: 300%;
+    margin: 0 auto;
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+}
+
+.grid1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 90%;
+    margin: 0 auto;
+    grid-gap: 50px;
+    
+}
+
 .slider{
     margin: 0 auto;
     width: 800px;
     height: 500px;
     overflow: hidden;
 }
+
 .slider-itn{
     width: 400%;
     height: 280px;
     display: flex;
     
 }
+
 .slider-itn img{
     width: 800px;
     height: 440px;
-    
-}
+ }
+
 .slider-itn input{
     display: none;
 }
+
 .slide{
     width: 25%;
     position: relative;
@@ -185,6 +200,7 @@ span{
     display: flex;
     justify-content: center;
 }
+
 .manual-btn{
     border: 2px solid #C961FA;
     padding: 5px;
@@ -192,9 +208,11 @@ span{
     cursor: pointer;
     transition: 0.5s;
 }
+
 .manual-btn:not(:last-child){
     margin-right: 40px;
 }
+
 .manual-btn:hover{
     background-color: #C961FA;
 }
@@ -202,18 +220,23 @@ span{
 #radio1:checked ~ .firt{
     margin-left: 0;
 }
+
 #radio2:checked ~ .first{
     margin-left: -25%;
 }
+
 #radio3:checked ~ .first{
     margin-left: -50%;
 }
+
 #radio4:checked ~ .first{
     margin-left: -75%;
 }
+
 #radio5:checked ~ .first{
     margin-left: -100%
 }
+
 .navegation-auto div{
   border: 2px solid blue;
   padding: 5px;
@@ -221,6 +244,7 @@ span{
   cursor: pointer;
   transition: 1s;
 }
+
 .navegation-auto{
     position: absolute;
     width: 800px;
@@ -228,21 +252,27 @@ span{
     display: flex;
     justify-content: center;
 }
+
 .navegation-auto div:not(:last-child){
     margin-right: 40px;
 }
+
 #radio1:checked ~ .navegation-auto .auto-btn1{
     background-color: #C961FA;
 }
+
 #radio2:checked ~ .navegation-auto .auto-btn2{
     background-color: #C961FA;
 }
+
 #radio3:checked ~ .navegation-auto .auto-btn3{
     background-color: #C961FA;
 }
+
 #radio4:checked ~ .navegation-auto .auto-btn4{
     background-color: #C961FA;
 }
+
 #radio5:checked ~ .navegation-auto .auto-btn5{
     background-color: #C961FA;
 }

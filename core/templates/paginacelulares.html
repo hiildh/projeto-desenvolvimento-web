@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modelo 1</title>
+    
+</head>
+<body>
+    <div>
+    <div class="container"></div>
+    <h1>{{celular.nome}}</h1>
+    <img src="{{ celular.imagem_link }}" alt="{{celular.nome}}" class="imagem-do-produto">
+    <div class="modelo">{{celular.modelo}}</div>
+    <div class="informações basicas">memoria ram, memoria interna, processador</p>
+    <div class="descrição"> {{celular.descricao}}</p>
+        <!-- não coloquei preço no banco de dados -->
+    <div class="preço">R$1000</div> 
+    <a href="{{celular.link_venda}}" class="button">adiquira o produto</a>
+  </div>
+
+    <div>
+        <h2>avaliações</h2>
+        <div id="strelas">
+            <span class="strela" data-value="1">★</span>
+            <span class="strela" data-value="2">★</span>
+            <span class="strela" data-value="3">★</span>
+            <span class="strela" data-value="4">★</span>
+            <span class="strela" data-value="5">★</span>
+        </div>
+        <p id="texto-de-avaliação"></p>
+    <div class="comentarios">
+        <h3>comentários</h3>
+        <textarea id="armazenar-comentario" rows="4" placeholder="digite seu comentário"></textarea>
+        <button id="enviarcomentariO">Enviar comentário</button>
+
+    </div>
+
+
+
+   
+</body>
+</html>
