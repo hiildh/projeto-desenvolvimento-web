@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>modelo 1</title>
-    
+    <title>{{celular.nome}}</title>
+    <style>
+        .star-rating {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+        }
+
+        .star {
+            font-size: 1em;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .star.hover,
+        .star.selected {
+            color: gold;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -21,23 +39,70 @@
 
     <div>
         <h2>avaliações</h2>
-        <div id="strelas">
-            <span class="strela" data-value="1">★</span>
-            <span class="strela" data-value="2">★</span>
-            <span class="strela" data-value="3">★</span>
-            <span class="strela" data-value="4">★</span>
-            <span class="strela" data-value="5">★</span>
+        {% for comentario in comentarios %}
+            <div id="strelas">
+                {% for estrela in comentario.avaliacoes%}
+                <span class="strela" data-value="{{ forloop.counter }}">★</span>
+                {% endfor %}
+            </div>
+            <p id="texto-de-avaliação">{{comentario.conteudo}}</p>
+        {% endfor %}
+        <div class="comentarios">
+            <h3>comentários</h3>
+            {% if user.is_authenticated %}
+            <form method="POST" action="{% url 'comentar' celular.id %}">
+            {% csrf_token %}
+            <div class="star-rating">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+            <input type="hidden" name="avaliacao" id="avaliacao">
+            <textarea name="conteudo" id="armazenar-comentario" rows="4" placeholder="digite seu comentário"></textarea>
+            <button type="submit" id="enviarcomentariO">Enviar comentário</button>
+            </form>
+            {% else %}
+            <a href="{% url 'login' %}" class="button">Faça login para comentar</a>
+            {% endif %}
         </div>
-        <p id="texto-de-avaliação"></p>
-    <div class="comentarios">
-        <h3>comentários</h3>
-        <textarea id="armazenar-comentario" rows="4" placeholder="digite seu comentário"></textarea>
-        <button id="enviarcomentariO">Enviar comentário</button>
-
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star-rating .star');
+            const avaliacaoInput = document.getElementById('avaliacao');
+            
+            stars.forEach((star, index) => {
+                star.addEventListener('click', function() {
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.classList.add('selected');
+                        } else {
+                            s.classList.remove('selected');
+                        }
+                    });
+                    avaliacaoInput.value = index + 1; // O valor é baseado no índice da estrela clicada.
+                });
 
+                star.addEventListener('mouseover', function() {
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.classList.add('hover');
+                        } else {
+                            s.classList.remove('hover');
+                        }
+                    });
+                });
 
-   
+                star.addEventListener('mouseout', function() {
+                    stars.forEach(s => s.classList.remove('hover'));
+                });
+            });
+        });
+
+    </script>
+
 </body>
 </html>

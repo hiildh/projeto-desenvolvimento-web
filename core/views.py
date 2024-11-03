@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Noticia, Celular
+from .models import Comentario, Noticia, Celular
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.http import HttpResponse
@@ -54,7 +54,23 @@ def gerar_home(request):
 #view pra gerar o detalhamento dos celulares
 def detalhar_celular(request, id):
     celular = Celular.objects.get(id=id)
-    return render(request, 'paginacelulares.html', {'celular': celular})
+    comentarios = Comentario.objects.filter(celular=celular)
+    return render(request, 'paginacelulares.html', {'celular': celular, 'comentarios': comentarios})
+
+# Função para lidar com os comentários
+def comentar(request, id):
+    if request.method == 'POST':
+        conteudo = request.POST['conteudo']
+        avaliacao = request.POST['avaliacao']
+        celular = Celular.objects.get(id=id)
+        comentario = Comentario.objects.create(
+            usuario=request.user, 
+            celular=celular, 
+            conteudo=conteudo, 
+            avaliacao=avaliacao
+        )
+        return redirect('detalhar_celular', id=id)
+    return redirect('detalhar_celular', id=id)
 
 # View para listar celulares
 def listar_celulares(request):
