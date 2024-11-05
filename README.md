@@ -1,6 +1,6 @@
 # Projeto Django - Celulares
 
-Este é um projeto Django para gerenciar notícias sobre celulares, links de venda e comentários. O projeto usa CockroachDB como banco de dados.
+Este é um projeto Django para visualizar notícias sobre celulares, links de venda e comentários. O projeto usa CockroachDB como banco de dados.
 
 ## Configuração do Ambiente
 
