@@ -24,7 +24,7 @@
         }
 
         .imagem-do-produto {
-            max-width: 2000px; /* Ajuste o tamanho da imagem conforme necessário */
+            max-width: 2000px; 
         }
         .table-container {
             display: flex;
@@ -36,6 +36,18 @@
     </style>
 </head>
 <body>
+    <header>
+        <span class="logo">WebCell</span>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href=""></a>Smartphones</li>
+            <li><a href=""></a>Account</li>
+        </ul>
+        <ul>
+            <li><a href="/login/">Login</a></li>
+            <li><a href="/cadastro_user/">Register</a></li>
+        </ul>
+    </header>
  <div class="container">
     <h1>{{celular.nome}}</h1>
     <div class="table-container">
@@ -154,7 +166,7 @@
                             s.classList.remove('selected');
                         }
                     });
-                    avaliacaoInput.value = index + 1; // O valor é baseado no índice da estrela clicada.
+                    avaliacaoInput.value = index + 1; 
                 });
 
                 star.addEventListener('mouseover', function() {
@@ -176,4 +188,4 @@
     </script>
 
 </body>
-</html>
+</html> faça a aba de comentarios ficar abaixo da tabela nesse código
