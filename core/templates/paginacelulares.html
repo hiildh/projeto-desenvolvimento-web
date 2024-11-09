@@ -30,9 +30,21 @@
     <h1>{{celular.nome}}</h1>
     <img src="{{ celular.imagem_link }}" alt="{{celular.nome}}" class="imagem-do-produto">
     <div class="modelo">{{celular.modelo}}</div>
-    <div class="informações basicas">memoria ram, memoria interna, processador</p>
     <div class="descrição"> {{celular.descricao}}</p>
-        <!-- não coloquei preço no banco de dados -->
+    <div class="memoria_ram">{{memoria_ram}}</div>
+    <div class="fabricante">{{fabricante}}</div>
+    <div class="processador">{{processador}}</div>
+    <div class="velocidade_processador">{{velocidade_processador}}</div>
+    <div class="armazenamento">{{armazenamento}}</div>
+    <div class="tamanho_tela">{{tamanho_tela}}</div>
+    <div class="resolucao_tela">{{resolucao_tela}}</div>
+    <div class="velocidade_clock">{{ velocidade_clock}}</div>
+    <div class="bateria">{{bateria}}</div>
+    <div class="modelo_bateria">{{modelo_bateria}}</div>
+    <div class="camera">{{camera}}</div>
+    <div class="tipo_conexão">{{tipo_conexão}}</div>
+    <div class="link_venda">{{link_venda}}</div>
+    <div class="imagem_link">{{imagem_link}}</div>
     <div class="preço">R$1000</div> 
     <a href="{{celular.link_venda}}" class="button">adiquira o produto</a>
   </div>
