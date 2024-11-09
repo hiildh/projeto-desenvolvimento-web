@@ -22,33 +22,95 @@
         .star.selected {
             color: gold;
         }
+
+        .imagem-do-produto {
+            max-width: 4000px; 
+        }
+        .table-container {
+            display: flex;
+            align-items: flex-start;
+        }
+        .info-table {
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
-    <div>
-    <div class="container"></div>
-    <h1>{{celular.nome}}</h1>
-    <img src="{{ celular.imagem_link }}" alt="{{celular.nome}}" class="imagem-do-produto">
-    <div class="modelo">{{celular.modelo}}</div>
-    <div class="descrição"> {{celular.descricao}}</p>
-    <div class="memoria_ram">{{memoria_ram}}</div>
-    <div class="fabricante">{{fabricante}}</div>
-    <div class="processador">{{processador}}</div>
-    <div class="velocidade_processador">{{velocidade_processador}}</div>
-    <div class="armazenamento">{{armazenamento}}</div>
-    <div class="tamanho_tela">{{tamanho_tela}}</div>
-    <div class="resolucao_tela">{{resolucao_tela}}</div>
-    <div class="velocidade_clock">{{ velocidade_clock}}</div>
-    <div class="bateria">{{bateria}}</div>
-    <div class="modelo_bateria">{{modelo_bateria}}</div>
-    <div class="camera">{{camera}}</div>
-    <div class="tipo_conexão">{{tipo_conexão}}</div>
-    <div class="link_venda">{{link_venda}}</div>
-    <div class="imagem_link">{{imagem_link}}</div>
-    <div class="preço">R$10000</div> 
-    <a href="{{celular.link_venda}}" class="button">adiquira o produto</a>
-  </div>
 
+<div class="container table-container">
+    <!-- Coluna da imagem -->
+    <div>
+        <img src="{{ celular.imagem_link }}" alt="{{celular.nome}}" class="imagem-do-produto">
+    </div>
+
+    <!-- Coluna das informações do produto -->
+    <table border="1" class="info-table">
+        <tr>
+            <th colspan="2"><h1>{{celular.nome}}</h1></th>
+        </tr>
+        <tr>
+            <td>Modelo</td>
+            <td>{{celular.modelo}}</td>
+        </tr>
+        <tr>
+            <td>Descrição</td>
+            <td>{{celular.descricao}}</td>
+        </tr>
+        <tr>
+            <td>Memória RAM</td>
+            <td>{{celular.memoria_ram}}</td>
+        </tr>
+        <tr>
+            <td>Fabricante</td>
+            <td>{{celular.fabricante}}</td>
+        </tr>
+        <tr>
+            <td>Velocidade do Processador</td>
+            <td>{{celular.velocidade_processador}}</td>
+        </tr>
+        <tr>
+            <td>Armazenamento</td>
+            <td>{{celular.armazenamento}}</td>
+        </tr>
+        <tr>
+            <td>Tamanho da Tela</td>
+            <td>{{celular.tamanho_tela}}</td>
+        </tr>
+        <tr>
+            <td>Resolução</td>
+            <td>{{celular.resolucao_tela}}</td>
+        </tr>
+        <tr>
+            <td>Velocidade do Clock</td>
+            <td>{{celular.velocidade_clock}}</td>
+        </tr>
+        <tr>
+            <td>Bateria</td>
+            <td>{{celular.bateria}}</td>
+        </tr>
+        <tr>
+            <td>Modelo da Bateria</td>
+            <td>{{celular.modelo_bateria}}</td>
+        </tr>
+        <tr>
+            <td>Câmera</td>
+            <td>{{celular.camera}}</td>
+        </tr>
+        <tr>
+            <td>Tipo de Conexão</td>
+            <td>{{celular.tipo_conexao}}</td>
+        </tr>
+        <tr>
+            <td>Preço</td>
+            <td>R$10000</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <a href="{{celular.link_venda}}" class="button">Adquira o Produto</a>
+            </td>
+        </tr>
+    </table>
+</div>
     <div>
         <h2>avaliações</h2>
         {% for comentario in comentarios %}
