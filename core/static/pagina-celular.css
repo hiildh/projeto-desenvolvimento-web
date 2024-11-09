@@ -66,6 +66,10 @@ header ul li a:hover {
     color: gold;
 }
 
+.container{
+    padding: 10px;
+}
+
 .imagem-do-produto {
     max-width: 2000px; 
 }
@@ -73,6 +77,14 @@ header ul li a:hover {
     display: flex;
     align-items: flex-start;
 }
-.info-table {
-    margin-left: 20px;
+.informacoes{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 5px;
 }
+/* .info-table {
+    margin-left: 20px;
+} */

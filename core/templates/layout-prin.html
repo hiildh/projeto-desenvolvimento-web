@@ -10,7 +10,7 @@
         <span class="logo">WebCell</span>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href=""></a>Smartphones</li>
+            <li><a href="#celulares"></a>Smartphones</li>
             <li><a href=""></a>Account</li>
         </ul>
         <ul>
@@ -42,7 +42,7 @@
                     <button onclick="searchResults"></button>
                 </div>
             </section>
-            <section class="smartphones">
+            <section id="celulares" class="smartphones">
                 <span>SmartPhone</span>
                 {% for celular in celulares %}
                     <div id="{{celular.id}}" class="smt1" onclick="location.href='/detalhar-celular/{{celular.id}}'">

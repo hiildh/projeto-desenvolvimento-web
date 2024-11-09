@@ -1,162 +1,186 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{celular.nome}}</title>
-    <link rel="stylesheet" href="../static/pagina-celular.css">
-   </head>
-<body>
-    <header>
-        <span class="logo">WebCell</span>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href=""></a>Smartphones</li>
-            <li><a href=""></a>Account</li>
-        </ul>
-        <ul>
-            <li><a href="/login/">Login</a></li>
-            <li><a href="/cadastro_user/">Register</a></li>
-        </ul>
-    </header>
- <div class="container">
-    <h1>{{celular.nome}}</h1>
-    <div class="table-container">
-     <div>
-            <img src="{{ celular.imagem_link }}" alt="{{celular.nome}}" class="imagem-do-produto">
-        </div>
-        <table border="1" class="info-table">
-            <tr>
-                <td>Modelo</td>
-                <td>{{celular.modelo}}</td>
-            </tr>
-            <tr>
-                <td>Descrição</td>
-                <td>{{celular.descricao}}</td>
-            </tr>
-            <tr>
-                <td>Memória RAM</td>
-                <td>{{celular.memoria_ram}}</td>
-            </tr>
-            <tr>
-                <td>Fabricante</td>
-                <td>{{celular.fabricante}}</td>
-            </tr>
-            <tr>
-                <td>Velocidade do Processador</td>
-                <td>{{celular.velocidade_processador}}</td>
-            </tr>
-            <tr>
-                <td>Armazenamento</td>
-                <td>{{celular.armazenamento}}</td>
-            </tr>
-            <tr>
-                <td>Tamanho da Tela</td>
-                <td>{{celular.tamanho_tela}}</td>
-            </tr>
-            <tr>
-                <td>Resolução</td>
-                <td>{{celular.resolucao_tela}}</td>
-            </tr>
-            <tr>
-                <td>Velocidade do Clock</td>
-                <td>{{celular.velocidade_clock}}</td>
-            </tr>
-            <tr>
-                <td>Bateria</td>
-                <td>{{celular.bateria}}</td>
-            </tr>
-            <tr>
-                <td>Modelo da Bateria</td>
-                <td>{{celular.modelo_bateria}}</td>
-            </tr>
-            <tr>
-                <td>Câmera</td>
-                <td>{{celular.camera}}</td>
-            </tr>
-            <tr>
-                <td>Tipo de Conexão</td>
-                <td>{{celular.tipo_conexao}}</td>
-            </tr>
-            <tr>
-                <td>Preço</td>
-                <td>R$10000</td>
-            </tr>
-        </table>
-    </div>
-
-    
-    <div style="margin-top: 20px;">
-        <a href="{{celular.link_venda}}" class="button">Adquira o Produto</a>
-    </div>
-</div>
-
- <div>
-        <h2>avaliações</h2>
-        {% for comentario in comentarios %}
-            <div id="strelas">
-                {% for estrela in comentario.avaliacoes%}
-                <span class="strela" data-value="{{ forloop.counter }}">★</span>
-                {% endfor %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{celular.nome}}</title>
+        <link rel="stylesheet" href="/static/pagina-celular.css">
+    </head>
+    <body>
+        <header>
+            <span class="logo">WebCell</span>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#"></a>Smartphones</li>
+                <li><a href=""></a>Account</li>
+            </ul>
+            <ul>
+                <li><a href="/login/">Login</a></li>
+                <li><a href="/cadastro_user/">Register</a></li>
+            </ul>
+        </header>
+        <div class="container">
+            <h1>{{celular.nome}}</h1>
+            <div class="table-container">
+                <div>
+                    <img src="{{ celular.imagem_link }}" alt="{{celular.nome}}" class="imagem-do-produto">
+                    <div style="margin-top: 20px;">
+                        <a href="{{celular.link_venda}}" target="_blank" class="button">Adquira o Produto</a>
+                    </div>
+        
+                </div>
+                <div class="informacoes">
+                    <h2>Descrição</h2>
+                    <p>{{celular.descricao}}</p>
+                    <h3>Informações Técnicas</h3>
+                    <table border="1" class="info-table">
+                        <tr>
+                            <td>Modelo</td>
+                            <td>{{celular.modelo}}</td>
+                        </tr>
+                        <tr>
+                            <td>Memória RAM</td>
+                            <td>{{celular.memoria_ram}}</td>
+                        </tr>
+                        <tr>
+                            <td>Fabricante</td>
+                            <td>{{celular.fabricante}}</td>
+                        </tr>
+                        <tr>
+                            <td>Velocidade do Processador</td>
+                            <td>{{celular.velocidade_processador}}</td>
+                        </tr>
+                        <tr>
+                            <td>Armazenamento</td>
+                            <td>{{celular.armazenamento}}</td>
+                        </tr>
+                        <tr>
+                            <td>Tamanho da Tela</td>
+                            <td>{{celular.tamanho_tela}}</td>
+                        </tr>
+                        <tr>
+                            <td>Resolução</td>
+                            <td>{{celular.resolucao_tela}}</td>
+                        </tr>
+                        <tr>
+                            <td>Velocidade do Clock</td>
+                            <td>{{celular.velocidade_clock}}</td>
+                        </tr>
+                        <tr>
+                            <td>Bateria</td>
+                            <td>{{celular.bateria}}</td>
+                        </tr>
+                        <tr>
+                            <td>Modelo da Bateria</td>
+                            <td>{{celular.modelo_bateria}}</td>
+                        </tr>
+                        <tr>
+                            <td>Câmera</td>
+                            <td>{{celular.camera}}</td>
+                        </tr>
+                        <tr>
+                            <td>Tipo de Conexão</td>
+                            <td>{{celular.tipo_conexao}}</td>
+                        </tr>
+                    </table>
+                    <div class="avaliacoes">
+                        <h2>Avaliações ({{comentarios|length}})</h2>
+                        {% for comentario in comentarios %}
+                            <div id="strelas">
+                                <!-- recebe um número inteiro de 1 a 5 e rnderiza a quantidade de estrelas -->
+                                {% if comentario.avaliacao == 1 %}
+                                    <span class="star selected">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                {% elif comentario.avaliacao == 2 %}
+                                    <span class="star selected">★</span>
+                                    <span class="star selected">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                {% elif comentario.avaliacao == 3 %}
+                                    <span class="star selected">★</span>
+                                    <span class="star selected">★</span>
+                                    <span class="star selected">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                {% elif comentario.avaliacao == 4 %}
+                                    <span class="star selected">★</span>
+                                    <span class="star selected">★</span>
+                                    <span class="star selected">★</span>
+                                    <span class="star selected">★</span>
+                                    <span class="star">★</span>
+                                {% elif comentario.avaliacao == 5 %}
+                                    <span class="star selected">★</span>
+                                    <span class="star selected">★</span>
+                                    <span class="star selected">★</span>
+                                    <span class="star selected">★</span>
+                                    <span class="star selected">★</span>
+                                {% endif %}
+                            </div>
+                            <p id="texto-de-avaliação">{{comentario.conteudo}}</p>
+                        {% endfor %}
+                        <div class="comentarios">
+                            <h3>Comentar</h3>
+                            {% if user.is_authenticated %}
+                            <form method="POST" action="{% url 'comentar' celular.id %}">
+                                {% csrf_token %}
+                                <div class="star-rating">
+                                    <span class="star" data-value="1">★</span>
+                                    <span class="star" data-value="2">★</span>
+                                    <span class="star" data-value="3">★</span>
+                                    <span class="star" data-value="4">★</span>
+                                    <span class="star" data-value="5">★</span>
+                                </div>
+                                <input type="hidden" name="avaliacao" id="avaliacao">
+                                <textarea name="conteudo" id="armazenar-comentario" rows="4" placeholder="digite seu comentário"></textarea>
+                                <button type="submit" id="enviarcomentariO">Enviar comentário</button>
+                            </form>
+                            {% else %}
+                            <a href="{% url 'login' %}" class="button">Faça login para comentar</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>    
             </div>
-            <p id="texto-de-avaliação">{{comentario.conteudo}}</p>
-        {% endfor %}
-        <div class="comentarios">
-            <h3>comentários</h3>
-            {% if user.is_authenticated %}
-            <form method="POST" action="{% url 'comentar' celular.id %}">
-            {% csrf_token %}
-            <div class="star-rating">
-                <span class="star" data-value="1">★</span>
-                <span class="star" data-value="2">★</span>
-                <span class="star" data-value="3">★</span>
-                <span class="star" data-value="4">★</span>
-                <span class="star" data-value="5">★</span>
-            </div>
-            <input type="hidden" name="avaliacao" id="avaliacao">
-            <textarea name="conteudo" id="armazenar-comentario" rows="4" placeholder="digite seu comentário"></textarea>
-            <button type="submit" id="enviarcomentariO">Enviar comentário</button>
-            </form>
-            {% else %}
-            <a href="{% url 'login' %}" class="button">Faça login para comentar</a>
-            {% endif %}
         </div>
-    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const stars = document.querySelectorAll('.star-rating .star');
-            const avaliacaoInput = document.getElementById('avaliacao');
-            
-            stars.forEach((star, index) => {
-                star.addEventListener('click', function() {
-                    stars.forEach((s, i) => {
-                        if (i <= index) {
-                            s.classList.add('selected');
-                        } else {
-                            s.classList.remove('selected');
-                        }
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const stars = document.querySelectorAll('.star-rating .star');
+                const avaliacaoInput = document.getElementById('avaliacao');
+                
+                stars.forEach((star, index) => {
+                    star.addEventListener('click', function() {
+                        stars.forEach((s, i) => {
+                            if (i <= index) {
+                                s.classList.add('selected');
+                            } else {
+                                s.classList.remove('selected');
+                            }
+                        });
+                        avaliacaoInput.value = index + 1; 
                     });
-                    avaliacaoInput.value = index + 1; 
-                });
 
-                star.addEventListener('mouseover', function() {
-                    stars.forEach((s, i) => {
-                        if (i <= index) {
-                            s.classList.add('hover');
-                        } else {
-                            s.classList.remove('hover');
-                        }
+                    star.addEventListener('mouseover', function() {
+                        stars.forEach((s, i) => {
+                            if (i <= index) {
+                                s.classList.add('hover');
+                            } else {
+                                s.classList.remove('hover');
+                            }
+                        });
                     });
-                });
 
-                star.addEventListener('mouseout', function() {
-                    stars.forEach(s => s.classList.remove('hover'));
+                    star.addEventListener('mouseout', function() {
+                        stars.forEach(s => s.classList.remove('hover'));
+                    });
                 });
             });
-        });
 
-    </script>
+        </script>
 
-</body>
+    </body>
 </html> 
