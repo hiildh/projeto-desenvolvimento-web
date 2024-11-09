@@ -23,8 +23,8 @@
             color: gold;
         }
 
-        .imagem-do-produto {
-            max-width: 4000px; 
+        imagem-do-produto {
+            max-width: 200px; /* Ajuste o tamanho da imagem conforme necessário */
         }
         .table-container {
             display: flex;
@@ -37,81 +37,84 @@
 </head>
 <body>
 
-<div class="container table-container">
-    <!-- Coluna da imagem -->
-    <div>
-        <img src="{{ celular.imagem_link }}" alt="{{celular.nome}}" class="imagem-do-produto">
+<div class="container">
+    <!-- Nome do celular -->
+    <h1>{{celular.nome}}</h1>
+
+    <div class="table-container">
+        <!-- Coluna da imagem -->
+        <div>
+            <img src="{{ celular.imagem_link }}" alt="{{celular.nome}}" class="imagem-do-produto">
+        </div>
+
+        <!-- Coluna das informações do produto -->
+        <table border="1" class="info-table">
+            <tr>
+                <td>Modelo</td>
+                <td>{{celular.modelo}}</td>
+            </tr>
+            <tr>
+                <td>Descrição</td>
+                <td>{{celular.descricao}}</td>
+            </tr>
+            <tr>
+                <td>Memória RAM</td>
+                <td>{{celular.memoria_ram}}</td>
+            </tr>
+            <tr>
+                <td>Fabricante</td>
+                <td>{{celular.fabricante}}</td>
+            </tr>
+            <tr>
+                <td>Velocidade do Processador</td>
+                <td>{{celular.velocidade_processador}}</td>
+            </tr>
+            <tr>
+                <td>Armazenamento</td>
+                <td>{{celular.armazenamento}}</td>
+            </tr>
+            <tr>
+                <td>Tamanho da Tela</td>
+                <td>{{celular.tamanho_tela}}</td>
+            </tr>
+            <tr>
+                <td>Resolução</td>
+                <td>{{celular.resolucao_tela}}</td>
+            </tr>
+            <tr>
+                <td>Velocidade do Clock</td>
+                <td>{{celular.velocidade_clock}}</td>
+            </tr>
+            <tr>
+                <td>Bateria</td>
+                <td>{{celular.bateria}}</td>
+            </tr>
+            <tr>
+                <td>Modelo da Bateria</td>
+                <td>{{celular.modelo_bateria}}</td>
+            </tr>
+            <tr>
+                <td>Câmera</td>
+                <td>{{celular.camera}}</td>
+            </tr>
+            <tr>
+                <td>Tipo de Conexão</td>
+                <td>{{celular.tipo_conexao}}</td>
+            </tr>
+            <tr>
+                <td>Preço</td>
+                <td>R$10000</td>
+            </tr>
+        </table>
     </div>
 
-    <!-- Coluna das informações do produto -->
-    <table border="1" class="info-table">
-        <tr>
-            <th colspan="2"><h1>{{celular.nome}}</h1></th>
-        </tr>
-        <tr>
-            <td>Modelo</td>
-            <td>{{celular.modelo}}</td>
-        </tr>
-        <tr>
-            <td>Descrição</td>
-            <td>{{celular.descricao}}</td>
-        </tr>
-        <tr>
-            <td>Memória RAM</td>
-            <td>{{celular.memoria_ram}}</td>
-        </tr>
-        <tr>
-            <td>Fabricante</td>
-            <td>{{celular.fabricante}}</td>
-        </tr>
-        <tr>
-            <td>Velocidade do Processador</td>
-            <td>{{celular.velocidade_processador}}</td>
-        </tr>
-        <tr>
-            <td>Armazenamento</td>
-            <td>{{celular.armazenamento}}</td>
-        </tr>
-        <tr>
-            <td>Tamanho da Tela</td>
-            <td>{{celular.tamanho_tela}}</td>
-        </tr>
-        <tr>
-            <td>Resolução</td>
-            <td>{{celular.resolucao_tela}}</td>
-        </tr>
-        <tr>
-            <td>Velocidade do Clock</td>
-            <td>{{celular.velocidade_clock}}</td>
-        </tr>
-        <tr>
-            <td>Bateria</td>
-            <td>{{celular.bateria}}</td>
-        </tr>
-        <tr>
-            <td>Modelo da Bateria</td>
-            <td>{{celular.modelo_bateria}}</td>
-        </tr>
-        <tr>
-            <td>Câmera</td>
-            <td>{{celular.camera}}</td>
-        </tr>
-        <tr>
-            <td>Tipo de Conexão</td>
-            <td>{{celular.tipo_conexao}}</td>
-        </tr>
-        <tr>
-            <td>Preço</td>
-            <td>R$10000</td>
-        </tr>
-        <tr>
-            <td colspan="2" style="text-align: center;">
-                <a href="{{celular.link_venda}}" class="button">Adquira o Produto</a>
-            </td>
-        </tr>
-    </table>
+    <!-- Botão fora da tabela -->
+    <div style="margin-top: 20px;">
+        <a href="{{celular.link_venda}}" class="button">Adquira o Produto</a>
+    </div>
 </div>
-    <div>
+
+ <div>
         <h2>avaliações</h2>
         {% for comentario in comentarios %}
             <div id="strelas">
