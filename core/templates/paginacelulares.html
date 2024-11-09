@@ -23,8 +23,8 @@
             color: gold;
         }
 
-        imagem-do-produto {
-            max-width: 200px; /* Ajuste o tamanho da imagem conforme necessário */
+        .imagem-do-produto {
+            max-width: 2000px; /* Ajuste o tamanho da imagem conforme necessário */
         }
         .table-container {
             display: flex;
@@ -36,18 +36,12 @@
     </style>
 </head>
 <body>
-
-<div class="container">
-    <!-- Nome do celular -->
+ <div class="container">
     <h1>{{celular.nome}}</h1>
-
     <div class="table-container">
-        <!-- Coluna da imagem -->
-        <div>
+     <div>
             <img src="{{ celular.imagem_link }}" alt="{{celular.nome}}" class="imagem-do-produto">
         </div>
-
-        <!-- Coluna das informações do produto -->
         <table border="1" class="info-table">
             <tr>
                 <td>Modelo</td>
@@ -108,7 +102,7 @@
         </table>
     </div>
 
-    <!-- Botão fora da tabela -->
+    
     <div style="margin-top: 20px;">
         <a href="{{celular.link_venda}}" class="button">Adquira o Produto</a>
     </div>
