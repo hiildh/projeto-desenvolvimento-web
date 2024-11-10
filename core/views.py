@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
 from .models import Comentario, Noticia, Celular
 from django.contrib.auth.models import User
+from django.contrib.auth import logout, update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 # View para listar notícias
 def listar_noticias(request):
@@ -107,3 +110,35 @@ def cadastro_user(request):
         return redirect('login')  # Redireciona para a página de login
 
     return render(request, 'cadastro_user.html')
+
+@login_required(login_url='login')
+def configuracoes_user(request):
+    user = request.user
+    password_form = PasswordChangeForm(user)  # Inicializar o formulário de senha no início
+    
+    if request.method == 'POST':
+        if 'username' in request.POST:
+            # Atualizar nome do usuário
+            new_username = request.POST.get('username')
+            user.username = new_username
+            user.save()
+            messages.success(request, 'Nome de usuário atualizado com sucesso.')
+        else:
+            # Troca de senha
+            password_form = PasswordChangeForm(user, request.POST)
+            if password_form.is_valid():
+                user = password_form.save()
+                update_session_auth_hash(request, user)  # Mantém o usuário logado
+                messages.success(request, 'Senha trocada com sucesso.')
+                return redirect('configuracoes_user')
+            else:
+                messages.error(request, 'Corrija os erros abaixo.')
+
+    return render(request, 'configuracoes_user.html', {'user': user, 'password_form': password_form})
+
+@login_required
+def delete_account(request):
+    user = request.user
+    user.delete()
+    logout(request)
+    return redirect('login')

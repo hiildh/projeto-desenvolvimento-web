@@ -10,13 +10,17 @@
         <span class="logo">WebCell</span>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="#celulares"></a>Smartphones</li>
-            <li><a href=""></a>Account</li>
+            <li><a href="#celulares">Smartphones</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="/configuracoes-usuario/">Olá, {{ user.username }}</a></li>
+            {% endif %}
         </ul>
-        <ul>
-            <li><a href="/login/">Login</a></li>
-            <li><a href="/cadastro_user/">Register</a></li>
-        </ul>
+        {% if not user.is_authenticated %}
+            <ul>
+                <li><a href="/login/">Login</a></li>
+                <li><a href="/cadastro_user/">Register</a></li>
+            </ul>
+        {% endif %}
     </header>
     <main>
         <section class="hero">

@@ -12,12 +12,16 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="#"></a>Smartphones</li>
-                <li><a href=""></a>Account</li>
+                {% if user.is_authenticated %}
+                    <li><a href="/configuracoes-usuario/">Olá, {{ user.username }}</a></li>
+                {% endif %}
             </ul>
-            <ul>
-                <li><a href="/login/">Login</a></li>
-                <li><a href="/cadastro_user/">Register</a></li>
-            </ul>
+            {% if not user.is_authenticated %}
+                <ul>
+                    <li><a href="/login/">Login</a></li>
+                    <li><a href="/cadastro_user/">Register</a></li>
+                </ul>
+            {% endif %}
         </header>
         <div class="container">
             <h1>{{celular.nome}}</h1>
