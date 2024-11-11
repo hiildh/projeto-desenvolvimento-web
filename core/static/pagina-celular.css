@@ -90,6 +90,39 @@ header ul li a:hover {
     padding: 10px;
     gap: 5px;
 }
-/* .info-table {
-    margin-left: 20px;
-} */
+
+.card {
+    display: flex;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--white);
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+      rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+thead th{
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+}
+tbody tr{
+  transition: all 0.1s ease-in-out;
+}
+tbody tr:hover{
+  transform: scale(1.05);
+}
+
+tbody td{
+  background-color: #8c54fc;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.125rem;
+  text-align: center;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.text-left{
+  text-align: left;
+}
