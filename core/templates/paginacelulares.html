@@ -10,16 +10,17 @@
         <header>
             <span class="logo">WebCell</span>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#"></a>Smartphones</li>
+                <li><a  href="/">Home</a></li>
+                <li><a class="active" href="#">Smartphones</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="/configuracoes-usuario/">Olá, {{ user.username }}</a></li>
+                    <li><a href="/logout/">Sair</a></li>
                 {% endif %}
             </ul>
             {% if not user.is_authenticated %}
                 <ul>
                     <li><a href="/login/">Login</a></li>
-                    <li><a href="/cadastro_user/">Register</a></li>
+                    <li><a href="/cadastro_user/">Cadastro</a></li>
                 </ul>
             {% endif %}
         </header>
@@ -90,6 +91,7 @@
                     <div class="avaliacoes">
                         <h2>Avaliações ({{comentarios|length}})</h2>
                         {% for comentario in comentarios %}
+                            <h5>{{comentario.usuario}}</h5>
                             <div id="strelas">
                                 <!-- recebe um número inteiro de 1 a 5 e rnderiza a quantidade de estrelas -->
                                 {% if comentario.avaliacao == 1 %}

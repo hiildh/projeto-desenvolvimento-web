@@ -16,11 +16,11 @@ def adicionar_noticia(request):
     
     # Cria uma nova notícia com os dados que você inserir manualmente
     noticia = Noticia.objects.create(
-        titulo="Review Galaxy S24 FE | Um celular com bateria boa e desempenho suficiente",
-        conteudo="O Galaxy S24 FE é o novo celular intermediário premium da Samsung, parte da linha Fan Edition. Muito parecido com o Galaxy S24+ em visual e desempenho, o smartphone chega sem muitas novidades ou diferenciais, em posição confusa em relação aos demais modelos de 2024. Confira, no review a seguir, os prós e contras do Galaxy S24 FE e saiba para quem ele é bom.",
-        autor="canaltech",  # O nome do site ou fonte da notícia
-        link="https://canaltech.com.br/produto/samsung/galaxy-s24-fe/analise/",
-        imagem_link="https://t.ctcdn.com.br/bUNn0l9aEu5hggZUfprOrscEZ14=/1024x576/smart/i941627.jpeg"
+        titulo="Samsung Galaxy S24 vs iPhone 15: confira o que muda entre os celulares",
+        conteudo="Smartphones premium da Apple e Samsung se destacam por processadores rápidos, câmeras de qualidade e telas com tecnologias avançadas; compare e decida qual é o melhor",
+        autor="Techtudo",  # O nome do site ou fonte da notícia
+        link="https://www.techtudo.com.br/comparativo/2024/11/samsung-galaxy-s24-vs-iphone-15-confira-o-que-muda-entre-os-celulares-edmobile.ghtml",
+        imagem_link="https://s2-techtudo.glbimg.com/GWSktcK6XJhNrE9j2YXvgpm6M4M=/0x0:1920x1080/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2024/G/e/mVf0aZSPCog0udL0MjaA/galaxys24vsiphone15.png"
     )
 
     # Retorna uma resposta simples para confirmar que a notícia foi criada

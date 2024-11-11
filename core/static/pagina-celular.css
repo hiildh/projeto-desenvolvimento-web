@@ -35,6 +35,11 @@ header ul li {
     list-style: none;
 }
 
+header ul li .active {
+    background-color: #ad7ffa; /* color2 */
+    border-radius: 5px;
+}
+
 header ul li a {
     color: #ffffff;
     text-decoration: none;
