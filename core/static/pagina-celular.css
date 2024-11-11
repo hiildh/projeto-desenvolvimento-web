@@ -9,6 +9,7 @@ body {
     background-color: #bcccd8; /* color5 */
     color: #2c0282; /* color3 */
     line-height: 1.6;
+    width: 100vw;
 }
 
 header {
@@ -19,6 +20,7 @@ header {
     align-items: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 header .logo {
     font-size: 1.8rem;
@@ -71,33 +73,36 @@ header ul li a:hover {
     color: gold;
 }
 
-.container{
-    padding: 10px;
+header{
+    width: 100%;
 }
 
-.imagem-do-produto {
-    max-width: 2000px; 
-}
-.table-container {
+.main-container{
+    width: 100%;
     display: flex;
-    align-items: flex-start;
+    justify-content: space-around;
+    
 }
-.informacoes{
+.left-container{
     display: flex;
+    width: 50%;
+    padding-left: 10px;
+}
+.img-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.info-table{
+    display: flex;
+    width: 45%;
     flex-direction: column;
     background-color: aliceblue;
     border-radius: 10px;
     padding: 10px;
-    gap: 5px;
-}
-
-.card {
-    display: flex;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    background-color: var(--white);
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
-      rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    flex-wrap: wrap;
 }
 
 thead th{
@@ -113,7 +118,7 @@ tbody tr:hover{
 }
 
 tbody td{
-  background-color: #8c54fc;
+  background-color: #2c0282 ;
   padding: 0.8rem;
   font-size: 1.2rem;
   font-weight: 700;
@@ -126,3 +131,47 @@ tbody td{
 .text-left{
   text-align: left;
 }
+
+
+
+@media (max-width: 1000px) {
+    header {
+        padding: 15px ;
+        flex-direction: column;
+        align-items: baseline;
+        width: 110%;
+    }
+
+    header ul {
+        flex-direction:row;
+        gap: 0.5rem;
+    }
+    .main-container{
+        flex-direction: column;
+        padding: 5px;
+    }
+    .info-table{
+        width: 100%;
+    }
+    .left-container{
+        text-align: center;
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        gap: 5px;
+    }
+    .img-container{
+        width: 100vw;
+    }
+
+
+}
+
+
+
+
+
+
+

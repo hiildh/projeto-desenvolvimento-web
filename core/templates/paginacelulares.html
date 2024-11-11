@@ -24,17 +24,15 @@
                 </ul>
             {% endif %}
         </header>
-        <div class="container">
-            <h1>{{celular.nome}}</h1>
-            <div class="table-container">
-                <div>
-                    <img src="{{ celular.imagem_link }}" alt="{{celular.nome}}" class="imagem-do-produto">
-                    <div style="margin-top: 20px;">
+        <div class="main-container">
+                <div class="left-container">
+                    <div class="img-container">
+                        <h1>{{celular.nome}}</h1>
+                        <img src="{{ celular.imagem_link }}" alt="{{celular.nome}}" class="imagem-do-produto">
                         <a href="{{celular.link_venda}}" target="_blank" class="button">Adquira o Produto</a>
                     </div>
-        
                 </div>
-                <div class="informacoes">
+                <div class="info-table">
                     <h2>Descrição</h2>
                     <p>{{celular.descricao}}</p>
                     <h3>Informações Técnicas</h3>
@@ -149,7 +147,6 @@
                             {% endif %}
                         </div>
                     </div>
-                </div>    
             </div>
         </div>
 
