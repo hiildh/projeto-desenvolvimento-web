@@ -132,6 +132,11 @@ tbody td{
   text-align: left;
 }
 
+html{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 
 
 @media (max-width: 1000px) {
@@ -166,7 +171,9 @@ tbody td{
         width: 100vw;
     }
 
-
+   *{
+    overflow: hidden;
+   }
 }
 
 
