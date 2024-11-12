@@ -229,12 +229,12 @@ ul{
 .manual-navegation{
     position: absolute;
     width: 800px;
-    margin-top: 120px;
+    margin-top: 110px;
     display: flex;
-    justify-content: space-between;
-    height: 10%;
+    height: fit-content;
     width: -webkit-fill-available;
     padding: 10px 0 10px 0; /* 10px acima e abaixo, 0 nas laterais */
+    left: 44%;
 }
 
 .search h2 {
@@ -278,7 +278,7 @@ ul{
 }
 
 .navegation-auto div{
-  border: 2px solid blue;
+  border: 2px solid #C961FA;
   padding: 5px;
   border-radius: 10px;
   cursor: pointer;
