@@ -1,4 +1,4 @@
-<html lang="pt-br">
+<html lang="pt-br"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +7,16 @@
 </head>
 <body>
     <header> <!--Aqui demos inicio a nossa página, a tag header símboliza o cabeçalho da página-->
-        <nav> <!--Tag nav utilizada para indicar e menu principal e iterativo da página-->
+        <nav class=""> <!--Tag nav utilizada para indicar e menu principal e iterativo da página-->
             <span class="logo">WebCell</span>  <!--Parte da logo + botão interativo-->
             <ul class="menu"> <!--Lista com elemento utilizados no header-->
-                <li><a href="" >Home</a></li>
-                <li><a href="">Smartphones</a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="#smartphones">Smartphones</a></li>
                 <li><a href="">Account</a></li>
             </ul>
             <ul>
                 <div class="pg-login"> <!--Parte de interação com o úsuario para login e registrar-->
-                    <div><li><a href="login.html" class="botao-login">Login</a></div>
+                    <div><li><a href="cadastro_user.html" class="botao-login">Login</a></div>
                     <div><li><a href="register.html" class="botao-register">Register</a></li></div>
                 </div>
             </ul>
@@ -24,8 +24,8 @@
     </header>
     <main> <!--Dá inicio a parte principal do nosso site-->
         <section class="hero">
-            <span class="subtit">Notícias</span> <!--A parte do Hero é divida em 3 parte principais cada uma com seu assunto-->
-            <h2>Fique por dentro das principais notícias do mundo mobile.</h2>
+            <div class="divSubtit"><span class="subtit">Notícias</span></div> <!--A parte do Hero é divida em 3 parte principais cada uma com seu assunto-->
+            <div class="divSubtit"><h2 class="subtit2">Fique por dentro das principais notícias do mundo mobile:</h2></div>
                 <div class="slider"> <!--Temos um carrossel de notciais que ao clicar direciona para a página principal da nóticia-->
                         <div class="slider-itn">
                             <input type="radio" name="radio-btn" id="radio1">
@@ -107,13 +107,14 @@
                     }
                 </script>
             </section>
-            <section class="smartphones">
+            <section class="smartphones" id="smartphones">
+                <div class="divSubtit"><span class="subtit">SmartPhones</span></div>
                 <section class="search">
-                    <div class="search-container">
+                    <div class="searchContainer">
                         <input type="text" class="searchInput" placeholder="Digite sua busca...">
-                        <button onclick="searchResults">🔍</button>
+                        <a class="searchIcon"href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></a>
                     </div>
-                <span class="subtit">SmartPhone</span>
+                </section>
                 <div class="smartphone-grid">
                     <section class="grid1">
                         <div class="smt">
@@ -156,7 +157,6 @@
                             <img src="/imgs-prin/pocox6.png" alt="Poco X6">
                         </div>
                     </section>
-            </div>
             </section>
         </section>
     </main>

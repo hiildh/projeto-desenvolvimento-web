@@ -4,24 +4,30 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html{
     font-family: inter, sans-serif;
     font-weight: 500;
+    scroll-behavior: smooth;
 }
+
 a{
     text-decoration: none;
     color: #FFFF;
 }
+
 ul{
     list-style: none;
 }
+
 header{
     background: #C961FA;        
-    width: 1920px;
+    width: 100%;
     height: 107px;
 }
+
 nav{
-    max-width: 80%;
+    max-width: 100%;
     margin: auto;
     padding: 1rem 1%;
 
@@ -29,7 +35,10 @@ nav{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
+
 .logo{
     color: #ffffff;
     text-shadow: -2px -1px 0 #000, 2px -1px 0 #000, -2px 1px 0 #000, 2px 1px 0 #000;    
@@ -40,6 +49,7 @@ nav{
     line-height: normal;
     margin-right: 40px;
 }
+
 .menu {
     display: flex;
     gap: 1.5rem;
@@ -47,6 +57,7 @@ nav{
     list-style-type: none;
     
 }
+
 .menu li a{
     color: #ffffff;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -55,9 +66,11 @@ nav{
     font-style: normal;
     font-weight: 400;
 }
+
 ul{
     list-style: none;
 }
+
 .pg-login{
     max-width: 1120px;
     margin: auto;
@@ -68,6 +81,7 @@ ul{
     justify-content: space-between;
     align-items: center;
 }
+
 .botao-login {
     background-color: #fafafa;
     color: rgb(248, 248, 248); 
@@ -104,29 +118,46 @@ ul{
     transition: background-color 0.3s; 
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+
 .hero{
     text-align: center;
 }
+
 .subtit{
     font-family: "Montserrat";
     font-size: 50px;
+    width: 100%;
+    margin-left: 14.7%;
+   
+}
+
+.subtit2{
+    margin-left: 14.7%;
+    font-weight: 500;
+    margin-bottom: 4rem;
+}
+
+.divSubtit{
+    width: 100%;
+    text-align: left;
 }
 .smartphones{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.smartphones-grid{
+
+.smartphone-grid{
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
 }
+
 .smt img{
     width: 300;
     height: 400; 
     border-radius: 4px;
 }
+
 .smt{
     width: calc(25% - 20 px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -145,7 +176,7 @@ ul{
     font-size: 16px;
 }
 
-.search-container{
+.searchContainer{
     display: flex;
     align-items: center;
     max-width: 300%;
@@ -153,6 +184,8 @@ ul{
     padding: 5px;
     border: 2px solid #ccc;
     border-radius: 25px;
+    margin: 4rem 0;
+    width: 1000px;
 }
 
 .grid1{
@@ -275,4 +308,8 @@ ul{
 
 #radio5:checked ~ .navegation-auto .auto-btn5{
     background-color: #C961FA;
+}
+
+.searchIcon{
+    padding-right: 8px;
 }
