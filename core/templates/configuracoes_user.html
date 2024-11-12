@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <link rel="stylesheet" type="text/css" href="/static/configuracoes_user.css">
+</head>
+<body>
+    <header>
+        <span class="logo">WebCell</span>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a class="active" href="/configuracoes-usuario/">Olá, {{ user.username }}</a></li>
+        </ul>
+    </header>
+    <main>
+        {% if messages %}
+            <div>
+                {% for message in messages %}
+                <div class="alert-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <section class="config-section">
+            <h2>Editar Nome</h2>
+            <form action="{% url 'configuracoes_user' %}" method="post">
+                {% csrf_token %}
+                <label for="username">Nome de Usuário:</label>
+                <input type="text" id="username" name="username" value="{{ user.username }}" required>
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </section>
+
+        <section class="config-section">
+            <h2>Trocar Senha</h2>
+            <form action="{% url 'configuracoes_user' %}" method="post">
+                {% csrf_token %}
+                {{ password_form.as_p }}
+                <button type="submit">Trocar Senha</button>
+            </form>
+        </section>
+
+        <section class="config-section delete-section">
+            <h2>Apagar Conta</h2>
+            <p>*Esta ação é irreversível e apagará sua conta permanentemente.</p>
+            <form action="{% url 'delete_account' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="delete-button">Apagar Conta</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

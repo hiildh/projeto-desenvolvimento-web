@@ -231,7 +231,14 @@ ul{
     width: 800px;
     margin-top: 120px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    height: 10%;
+    width: -webkit-fill-available;
+    padding: 10px 0 10px 0; /* 10px acima e abaixo, 0 nas laterais */
+}
+
+.search h2 {
+    align-self: center;
 }
 
 .manual-btn{

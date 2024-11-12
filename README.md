@@ -1,6 +1,6 @@
 # Projeto Django - Celulares
 
-Este é um projeto Django para gerenciar notícias sobre celulares, links de venda e comentários. O projeto usa CockroachDB como banco de dados.
+Este é um projeto Django para visualizar notícias sobre celulares, links de venda e comentários. O projeto usa CockroachDB como banco de dados.
 
 ## Configuração do Ambiente
 
@@ -60,7 +60,7 @@ curl --create-dirs -o $HOME/.postgresql/root.crt 'https://cockroachlabs.cloud/cl
 #### 5. Executar o servidor
 Agora, você pode rodar o servidor localmente:
 ```bash
-python manage.py migrate
+python manage.py runserver
 ```
 O servidor estará disponível no endereço ``http://127.0.0.1:8000/``.
 

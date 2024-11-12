@@ -160,8 +160,43 @@
             </section>
         </section>
     </main>
-    <footer>
+    <script>
+        function searchCelulares() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const celulares = document.querySelectorAll('.celulares-container .smt1');
 
-    </footer>
+            celulares.forEach(celular => {
+                const celularNome = celular.querySelector('.celular-nome').textContent.toLowerCase();
+                if (celularNome.includes(searchInput)) {
+                    celular.style.display = '';
+                } else {
+                    celular.style.display = 'none';
+                }
+            });
+        }
+
+        let currentSlide = 0;
+
+        function updateCarousel() {
+            const carousel = document.querySelector('.carrossel .layout');
+            const items = document.querySelectorAll('.carrssoel-item');
+            const itemWidth = items[0].offsetWidth + 10; // largura do item + gap
+
+            // Verifica se está no fim e volta ao início, ou vice-versa
+            if (currentSlide >= items.length) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = items.length - 1;
+            }
+
+            const offset = -currentSlide * itemWidth;
+            carousel.style.transform = `translateX(${offset}px)`;
+        }
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+            updateCarousel();
+        }
+    </script>
 </body>
 </html>
