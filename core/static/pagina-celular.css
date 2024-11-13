@@ -6,17 +6,16 @@
 }
 
 body {
-    background-color: #bcccd8;
-    /* color5 */
+    background-color:#fff;
+ 
     color: #2c0282;
-    /* color3 */
+  
     line-height: 1.6;
     width: 100vw;
 }
 
 header {
     background-color: #8c54fc;
-    /* color1 */
     padding: 15px 10%;
     display: flex;
     justify-content: space-between;
@@ -86,6 +85,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    background-color: #fff;
 
 }
 
@@ -97,10 +97,10 @@ header {
 
 .img-container {
     display: flex;
-    width: 100%;
+    width: 80%;
     flex-direction: column;
     gap: 3px;
-}
+    }
 
 .info-table {
     display: flex;
@@ -194,7 +194,7 @@ html {
         font-size: medium;
         display: flex;
         justify-content: center;
-        align-items: center;
+       object-fit: contain;
         box-sizing: border-box;
         overflow: hidden;
     }
