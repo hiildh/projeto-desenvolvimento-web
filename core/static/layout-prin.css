@@ -176,14 +176,10 @@ ul{
 
 .subtit{
     font-family: "Montserrat";
-    font-size: 50px;
-    width: 100%;
-    margin-left: 14.7%;
-   
+    font-size: 50px;   
 }
 
 .subtit2{
-    margin-left: 14.7%;
     font-weight: 500;
     margin-bottom: 4rem;
 }
