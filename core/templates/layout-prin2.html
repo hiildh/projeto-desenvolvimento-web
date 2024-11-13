@@ -1,0 +1,107 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCell</title>
+    <link rel="stylesheet" href="../static/layout-prin.css">
+</head>
+<body>
+    <header>
+        <span class="logo">WebCell</span>
+        <ul>
+            <li><a class="active" href="/">Home</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="/configuracoes-usuario/">Olá, {{ user.username }}</a></li>
+                <li><a href="/logout/">Sair</a></li>
+            {% endif %}
+        </ul>
+        {% if not user.is_authenticated %}
+            <ul>
+                <li><a href="/login/">Login</a></li>
+                <li><a href="/cadastro_user/">Register</a></li>
+            </ul>
+        {% endif %}
+    </header>
+    <main>
+        <section class="hero">
+            <div class="conteudo-noticias">
+                <h2>Fique por dentro das principais notícias do mundo mobile.</h2>
+                <div class="carrossel">
+                    <div class="layout">
+                        {% for noticia in noticias %}
+                            <div class="carrssoel-item">
+                                <a href="{{noticia.link}}" target="_blank"><!--target -> serve para impor alguma acao quando o usuario clicar no link, blank é para clicar e abrir outra página.-->
+                                    <img src="{{ noticia.imagem_link }}" alt="{{ noticia.titulo }}">
+                                    <p>{{noticia.titulo}}</p>
+                                </a> 
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="left-arrow" onclick="moveSlide(-1)">&#10094; <img src=""></button>
+                <button class="right-arrow" onclick="moveSlide(1)">&#10095; <img src=""></button>
+            </div>
+            <div class="conteudo-celular">
+                <section class="search">
+                    <h2>SmartPhones</h2>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="input-icon">
+                            <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M20.9999 20.9999L16.6499 16.6499" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Digite sua busca..." onkeyup="searchCelulares()">
+                    </div>
+                </section>
+                <section id="celulares" class="smartphones">
+                    <div class="celulares-container">
+                        {% for celular in celulares %}
+                            <div id="{{celular.id}}" class="smt1" onclick="location.href='/detalhar-celular/{{celular.id}}'">
+                                <p class="celular-nome">{{celular.nome}}</p>
+                                <img src="{{celular.imagem_link}}" alt="{{celular.nome}}">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <script>
+        function searchCelulares() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const celulares = document.querySelectorAll('.celulares-container .smt1');
+
+            celulares.forEach(celular => {
+                const celularNome = celular.querySelector('.celular-nome').textContent.toLowerCase();
+                if (celularNome.includes(searchInput)) {
+                    celular.style.display = '';
+                } else {
+                    celular.style.display = 'none';
+                }
+            });
+        }
+
+        let currentSlide = 0;
+
+        function updateCarousel() {
+            const carousel = document.querySelector('.carrossel .layout');
+            const items = document.querySelectorAll('.carrssoel-item');
+            const itemWidth = items[0].offsetWidth + 10; // largura do item + gap
+
+            // Verifica se está no fim e volta ao início, ou vice-versa
+            if (currentSlide >= items.length) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = items.length - 1;
+            }
+
+            const offset = -currentSlide * itemWidth;
+            carousel.style.transform = `translateX(${offset}px)`;
+        }
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+            updateCarousel();
+        }
+    </script>
+</body>
+</html>
