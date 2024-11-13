@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import adicionar_noticia, comentar, configuracoes_user, delete_account, listar_noticias, listar_celulares, cadastro_user, adicionar_celular, gerar_home, detalhar_celular
+from .views import adicionar_noticia, comentar, configuracoes_user, delete_account, listar_noticias, listar_celulares, cadastro_user, adicionar_celular, gerar_home, detalhar_celular, logout, logoutFunc
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
@@ -16,5 +16,5 @@ urlpatterns = [
     path('password-change/', auth_views.PasswordChangeView.as_view(template_name='password_change.html'), name='password_change'),
     path('delete-account/', delete_account, name='delete_account'),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),  # Adiciona login
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),  # Adiciona logout
+    path('logout/', logoutFunc, name='logout'),  # Adiciona logout
 ]
