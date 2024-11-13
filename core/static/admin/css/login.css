@@ -4,6 +4,16 @@
     background: var(--darkened-bg);
     height: auto;
 }
+.logo{
+    color: #ffffff;
+    text-shadow: -2px -1px 0 #000, 2px -1px 0 #000, -2px 1px 0 #000, 2px 1px 0 #000;    
+    font-family: "Jersey 25";
+    font-size: 400%;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 40px;
+}
 
 .login #header {
     height: auto;

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 /* paleta de cores */
 /* .color1 { #8c54fc };
 .color2 { #ad7ffa };
@@ -8,7 +10,7 @@
 /* Estilo Global */
 body {
     font-family: Arial, sans-serif;
-    background-color: #bcccd821;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
     display: flex;
@@ -20,8 +22,8 @@ body {
 
 /* Header */
 header {
-    background-color: #717c866e;
-    color: white;
+    background-color: #2c0282;
+    color: rgb(240, 240, 240);
     position: fixed;
     top: 0;
     width: 100%;
@@ -31,20 +33,22 @@ header {
     z-index: 1000;
 }
 
-header h1 {
-    margin: 0;
-    text-align: center;
-    padding-left: 10px;
-    color: black;
-}
-
-.secondName {
-    color: #8c54fc;
+.logo{
+    color: #ffffff;
+    text-shadow: -2px -1px 0 #000, 2px -1px 0 #000, -2px 1px 0 #000, 2px 1px 0 #000;    
+    font-family: "Jersey 25";
+    font-size: 400%;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 40px;
+    padding-left: 50px;
 }
 
 /* Container principal */
 .container {
-    background-color: #fff;
+    background-color: aliceblue;
+    font-family: "Montserrat";
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -105,7 +109,7 @@ header h1 {
 
 /* Estilo do footer */
 footer {
-    background-color: #8c54fc;
+    background-color: #C961FA;
     color: white;
     padding: 10px;
     text-align: center;

@@ -56,7 +56,9 @@
 }
 
 
-
+body{
+    overflow-x: hidden;
+}
 
 
 
@@ -77,7 +79,7 @@ ul{
 }
 
 nav {
-    background: #C961FA;        
+    background: #2c0282;        
 }
 
 .logo{
