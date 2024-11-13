@@ -142,39 +142,43 @@ header {
     gap: 3px;
     }
 
-.info-table {
-    display: flex;
-    width: 45%;
-    flex-direction: column;
-    background-color: aliceblue;
-    border-radius: 10px;
-    padding: 10px;
-    flex-wrap: wrap;
+    .info-table {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        border-collapse: separate;
+        border-spacing: 8px; 
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 15px;
+    }
+ 
+    .info-table h2, .info-table h3 {
+        color: #7d3e96;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    
+    .info-table table {
+        width: 100%;
+        border-collapse: separate; 
+        border-spacing: 2px; 
+    }
+    
+    
+    .info-table td {
+        padding: 10px; 
+        background-color: #8c54fc;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        color: #fff;
+    }
+    
+    tbody tr{
+  transition: all 0.1s ease-in-out;
 }
-
-thead th {
-    font-size: 1rem;
-    font-weight: 800;
-    color: #fff;
-}
-
-tbody tr {
-    transition: all 0.1s ease-in-out;
-}
-
-tbody tr:hover {
-    transform: scale(1.05);
-}
-
-tbody td {
-    background-color: #2c0282;
-    padding: 0.8rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 0.125rem;
-    text-align: center;
-    border-radius: 10px;
-    color: #ffffff;
+tbody tr:hover{
+  transform: scale(1.05);
 }
 
 .text-left {
@@ -185,6 +189,51 @@ html {
     overflow-x: hidden;
     overflow-y: scroll;
 }
+
+form {
+    max-width: 500px;
+    margin:0%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+
+h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #8c54fc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #801b77;
+}
+
 
 @media (max-width: 1000px) {
     header {
@@ -230,7 +279,7 @@ html {
     }
 
     .img-container {
-        width: 100%;
+        width: 80%;
         font-size: medium;
         display: flex;
         justify-content: center;
@@ -244,9 +293,13 @@ html {
         box-sizing: border-box;
          overflow-x: hidden;
 
-        html {
-            overflow-x: hidden;
-            overflow-y: scroll;
-        }
+      
     }
+
+    html {
+        overflow-x: hidden;
+        overflow-y: scroll;
+       
+    }
+    
 }
