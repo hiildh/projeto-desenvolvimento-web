@@ -142,3 +142,8 @@ def delete_account(request):
     user.delete()
     logout(request)
     return redirect('login')
+
+@login_required
+def logoutFunc(request):
+    logout(request)
+    return redirect('index')
